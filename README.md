@@ -9,9 +9,9 @@ This wevv application allows users to navigate through the books, characters, ho
 ## Installation
 
   ```sh
-    git clone 
+    git clone https://github.com/MouradGaa/Game-of-Thrones-Wiki-Angular-Web-App.git
 
-    cd 
+    cd Game-of-Thrones-Wiki-Angular-Web-App
 
     npm install 
 
