@@ -4,7 +4,8 @@ A [Game of Throne Books Wiki](https://6480484b78aeb4467418a7f2--timely-salamande
 
 ## Description
 
-This wevv application allows users to navigate through the books, characters, houses of the amazing world of Game of Thrones.
+- This web application allows users to navigate through the books, characters, houses of the amazing world of Game of Thrones.
+- The web is built using Angular and the [API of Ice And Fire](https://anapioficeandfire.com/)
 
 ## Installation
 
