@@ -1,0 +1,25 @@
+.loader-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    max-width: 400px;
+
+    margin-bottom: 8px;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content>mat-card {
+    margin-bottom: 12px;
+}
+
+.image{
+    transform: scale(0.8);
+    width: 90%;
+}
+

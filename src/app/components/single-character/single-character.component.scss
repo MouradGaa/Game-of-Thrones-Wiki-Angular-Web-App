@@ -1,0 +1,14 @@
+.scroller {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.character-image {
+  width: 380px;
+  height: 480px;
+
+}
+
+a.active {
+  color: black !important;
+}

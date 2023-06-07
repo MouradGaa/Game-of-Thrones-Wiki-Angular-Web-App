@@ -1,0 +1,34 @@
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+  <mat-progress-spinner style="top: 25%; left: 50%;" mode="indeterminate"></mat-progress-spinner>
+</div>
+
+<div class="content">
+  
+  <div style="display: flex;">
+    <mat-form-field style="width: 30%;" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" name="name" [(ngModel)]="name" maxlength="256" placeholder="A Game of Thrones">
+    </mat-form-field>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let book of books | filter:name">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <mat-card-title>{{book.name}}</mat-card-title>
+          <mat-card-subtitle>Book</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-title-group>
+          <mat-card-content style="padding-left: 6px">
+            <h3>Isbn: <span> {{book.isbn}} </span> </h3>
+            <h3>Authors: <span>{{book.authors}}</span></h3>
+            <h3>#Pages: <span>{{book.numberOfPages}}</span></h3>
+            <h3>Publisher: <span>{{book.publisher}}</span></h3>
+          </mat-card-content>
+          <img class="book-image" mat-card-xl-image src="assets/images/{{book.isbn}}.jpg" />
+        </mat-card-title-group>
+        <mat-card-actions>
+          <button color="primary" mat-raised-button (click)="openDialog(book)">More Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

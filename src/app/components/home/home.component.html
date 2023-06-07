@@ -1,0 +1,34 @@
+<h1>Game Of Thrones World</h1>
+<owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <a [owlRouterLink]="['/books']">
+            <div class="slider">
+                <div class="title">
+                    BOOKS
+                </div>
+                <img src="https://cdn.shopify.com/s/files/1/2789/4914/products/buy-game-of-thrones-the-story-continues-box-set-7-books-book-online-book-prakash-books-9-78001e-12-19014896484518_870x448.jpg?v=1630974353"
+                    alt="img 1">
+            </div>
+        </a>
+    </ng-template>
+    <ng-template carouselSlide>
+        <a [owlRouterLink]="['/characters']">
+            <div class="slider">
+                <div class="title">
+                    CHARACTERS
+                </div>
+                <img src="https://image-ie.s3.eu-west-1.amazonaws.com/uploads/2016/04/download.jpg" alt="img 3">
+            </div>
+        </a>
+    </ng-template>
+    <ng-template carouselSlide>
+        <a [owlRouterLink]="['/houses']">
+            <div class="slider">
+                <div class="title">
+                    HOUSES
+                </div>
+                <img src="https://wallpapercave.com/wp/jOWZHCt.jpg" alt="img 2">
+            </div>
+        </a>
+    </ng-template>
+</owl-carousel-o>

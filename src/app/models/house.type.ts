@@ -1,0 +1,18 @@
+export interface IHouse {
+    url: string,
+    name: string,
+    region: string,
+    coatOfArms: string,
+    words: string,
+    titles: string[],
+    seats: string[],
+    currentLord: string,
+    heir: string,
+    overlord: string,
+    founded: Date,
+    founder: string,
+    diedOut: String,
+    ancestralWeapons: string[],
+    cadetBranch: string[],
+    swornMembers: string[],
+}

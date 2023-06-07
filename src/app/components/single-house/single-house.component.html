@@ -1,0 +1,51 @@
+<div>
+    <h2 style="text-align: center;" class="mat-display-1" matDialogTitle>{{house.name}}</h2>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <mat-grid-list cols="9" rowHeight="240px">
+        <mat-grid-tile colspan="3" rowspan="3">
+            <img *ngIf="house.region !=='' && house.region !=='The North'" mat-card-xl-image class="image"
+                src="assets/images/regions/{{house.region}}.png" />
+            <img *ngIf="house.region ==='The North'" class="north-img" mat-card-xl-image
+                src="assets/images/regions/The North.png" />
+        </mat-grid-tile>
+        <mat-grid-tile style="margin-left: 20px;" colspan="2" rowspan="3">
+            <mat-list style="margin-top:20px ; margin-bottom: 20px;" role="list">
+                <h3 class="mat-title">Region: <span> {{house.region}} </span> </h3>
+                <h3 class="mat-title">Coat Of Arms: <span> {{house.coatOfArms}} </span> </h3>
+                <h3 class="mat-title">Words: <span> {{house.words}} </span> </h3>
+                <h3 class="mat-title">Titles: <span> {{house.titles}} </span> </h3>
+                <h3 class="mat-title">Seats: <span> {{house.seats}} </span> </h3>
+                <h3 *ngIf="currentLord" class="mat-title">Current Lord: <span> <a
+                            [routerLink]="['/characters/'+getId(currentLord.url)]"> {{currentLord.name}}</a> </span>
+                </h3>
+                <h3 *ngIf="overLord" class="mat-title">Overlord:<span><a
+                            [routerLink]="['/houses/'+getId(overLord.url)]"  (click)="ngOnInit()"> {{overLord.name}}</a> </span> </h3>
+                <h3 *ngIf="heir" class="mat-title">Heir: <span><a [routerLink]="['/characters/'+getId(overLord.url)]">
+                            {{heir.name}}</a> </span> </h3>
+                <h3 class="mat-title">Founded: <span> {{house.founded}} </span> </h3>
+                <h3 class="mat-title">Ancestral Weapons: <span> {{house.ancestralWeapons}} </span> </h3>
+            </mat-list>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="4" rowspan="3">
+            <mat-selection-list [multiple]="false" role="list">
+                <div mat-subheader>Sworn Members</div>
+                <div class="scroller">
+                    <mat-list-option mat-button [routerLink]="['/characters/'+getId(member.url)]"
+                        *ngFor="let member of swornMembers">
+                        <mat-icon mat-list-icon>person</mat-icon>
+                        <div mat-line>{{member.name}}</div>
+                    </mat-list-option>
+                </div>
+                <div mat-subheader style="margin-top:20px ;">Cadet Branches</div>
+                <div class="scroller">
+                    <mat-list-option mat-button [routerLink]="['/houses/'+getId(branch.url)]"
+                        *ngFor="let branch of cadetBranches">
+                        <mat-icon mat-list-icon>castle</mat-icon>
+                        <div mat-line>{{branch.name}}</div>
+                    </mat-list-option>
+                </div>
+            </mat-selection-list>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

@@ -1,0 +1,41 @@
+<div>
+    <h2 style="text-align: center; margin-top: 10px;" class="mat-display-1">{{book.name}}</h2>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <mat-grid-list cols="8" rowHeight="180px">
+        <mat-grid-tile colspan="2" rowspan="3">
+            <img mat-card-xl-image class="book-image" src="assets/images/{{book.isbn}}.jpg" />
+        </mat-grid-tile>
+        <mat-grid-tile style="margin-left: 20px;" colspan="2" rowspan="3">
+            <mat-list role="list">
+                <h3 class="mat-title">Isbn: <span> {{book.isbn}} </span> </h3>
+                <h3 class="mat-title">Authors: <span>{{book.authors}}</span></h3>
+                <h3 class="mat-title">#Pages: <span>{{book.numberOfPages}}</span></h3>
+                <h3 class="mat-title">Publisher: <span>{{book.publisher}}</span></h3>
+                <h3 class="mat-title">Country: <span>{{book.country}}</span></h3>
+                <h3 class="mat-title">Media Type: <span>{{book.mediaType}}</span></h3>
+                <h3 class="mat-title">Release Date: <span>{{ToDate(book.released)}}</span></h3>
+            </mat-list>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="4" rowspan="3">
+            <mat-selection-list [multiple]="false" role="list">
+                <div mat-subheader>Characters</div>
+                <div class="scroller">
+                    <mat-list-option mat-button [routerLink]="['/characters/'+getId(character.url)]"
+                        *ngFor="let character of characters">
+                        <mat-icon mat-list-icon>person</mat-icon>
+                        <div mat-line>{{character.name}}</div>
+                    </mat-list-option>
+                </div>
+                <div mat-subheader style="margin-top:20px;">POV Characters</div>
+                <div class="scroller">
+                    <mat-list-option mat-button [routerLink]="['/characters/'+getId(povcharacter.url)]"
+                        *ngFor="let povcharacter of povCharacters">
+                        <mat-icon mat-list-icon>person</mat-icon>
+                        <div mat-line>{{povcharacter.name}}</div>
+                    </mat-list-option>
+                </div>
+            </mat-selection-list>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
